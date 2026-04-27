@@ -1,7 +1,7 @@
 const output = document.getElementById("output");
 
 /* Read the slides, make a prediction, then uncomment this code.
-
+*/
 
 var myVar = 0;
 output.innerHTML = "Start: "+myVar+"<br>";
@@ -19,6 +19,3 @@ function functionTwo() {
 }
 
 output.innerHTML += "end: "+myVar+"<br>";
-
-
-*/
