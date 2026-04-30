@@ -7,7 +7,7 @@ console.log("Running t10_input_from_HTML.js");
 /*---------------------------------------------------------VARIABLE DECLERATION---------------------------------------------------------*/
 
 
-let userName = "Steve";
+let userName = ".... ??? hello who? how can you see this? how did you bypass the form? get out of here right now!!!";
 let userAge = Math.round(Math.random()*100);
 let userMoney = Math.round(Math.random()*1000);
 let currentYear = 1900 + Math.round(Math.random()*199);
@@ -15,6 +15,7 @@ let currentYear = 1900 + Math.round(Math.random()*199);
 let tmp;
 
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
+const NAME_FIELD = document.getElementById("nameField");
 
 
 console.log("variables delcared successfully");
@@ -25,6 +26,7 @@ console.log("variables delcared successfully");
 //I'm going to put the begin function in the main code because  it kind of is the main code. This is like the web version of the "loop"
 //function which should be put in the "MAIN CODE" secition.
 function begin() {
+    userName = NAME_FIELD.value;
     OUTPUT.innerHTML = "<br>";
     OUTPUT.innerHTML += "<br>";
     welcome();
