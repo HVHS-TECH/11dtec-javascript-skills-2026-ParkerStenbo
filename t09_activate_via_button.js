@@ -1,7 +1,7 @@
 /*------------------------------------------------------------PROGRAM  START------------------------------------------------------------*/
 
 
-console.log("Running t07_functions_parameters.js");
+console.log("Running t08_activate_via_button.js");
 
 
 /*---------------------------------------------------------VARIABLE DECLERATION---------------------------------------------------------*/
@@ -47,7 +47,6 @@ console.log("code complete");
 
 /*---------------------------------------------------------------FUNCTION---------------------------------------------------------------*/
 
-function begin() {
     OUTPUT.innerHTML = "<br>";
     OUTPUT.innerHTML += "<br>";
     welcome();
@@ -56,6 +55,8 @@ function begin() {
     displayProduct("drink", "2.50");
     OUTPUT.innerHTML += "<br>";
     OUTPUT.innerHTML += "<br>";
+    
+function begin() {
 
     //Adding it to the doc
     OUTPUT.innerHTML += "<p>Hello " + userName + "</p>";
