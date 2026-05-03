@@ -16,6 +16,8 @@ let tmp;
 
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
 const NAME_FIELD = document.getElementById("nameField");
+const AGE_FIELD = document.getElementById("ageField");
+const MONEY_FIELD = document.getElementById("moneyField");
 
 
 console.log("variables delcared successfully");
@@ -27,9 +29,12 @@ console.log("variables delcared successfully");
 //function which should be put in the "MAIN CODE" secition.
 function begin() {
     userName = NAME_FIELD.value;
+    userAge = Number(AGE_FIELD.value);
+    userMoney = Number(MONEY_FIELD.value);
     OUTPUT.innerHTML = "<br>";
     OUTPUT.innerHTML += "<br>";
     welcome();
+    OUTPUT.innerHTML += "<p>You have $" + userMoney + "</p>";
     displayProduct("Chocolate bar", 4);
     displayProduct("chip", 3);
     displayProduct("drink", "2.50");
@@ -49,6 +54,7 @@ function begin() {
     tmp = (userMoney/2)+3;
     OUTPUT.innerHTML += "<p>Then you get 3 dollars. now you have $" + tmp + "</p>";
     console.log("function called successfully");
+    OUTPUT.innerHTML += "<p>All this money stuff is merely theoretical. Please go spened all your money on our products above :3</p>";
 }
 
 //what it's supposed to say
