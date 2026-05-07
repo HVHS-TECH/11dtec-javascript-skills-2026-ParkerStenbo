@@ -1,7 +1,7 @@
 /*------------------------------------------------------------PROGRAM  START------------------------------------------------------------*/
 
 
-console.log("Running t13_functions_return.js");
+console.log("Running t14_arrays.js");
 
 
 /*---------------------------------------------------------VARIABLE DECLERATION---------------------------------------------------------*/
@@ -11,14 +11,15 @@ let userName = ".... ??? hello who? how can you see this? how did you bypass the
 let userAge = 10000000000000000000000000000;
 let userMoney = 0.000000000000000000000000001;
 let currentYear = 1900 + Math.round(Math.random()*199);
-
+let messages = ["damn you really hate chocolate eh", "SCREW CHOCOLATE ALL MY HOMIES HATE CHOCOLATE", "chocoloate kinda sucks anyway", "it doesn't look bad but it doesn't look too good.", "yummy", "delectable", ".,;,,;,.", "<img src='../Image/moist critical.jpg'>", "beginning to get questionable how much you like this chocolate", "so you really like it huh", "I think you're taking this a bit too far", "STOP", "THIS IS TOO MUCH", "YOU'RE NOT SUPPOSED TO LIKE CHOCOLATE THIS MUCH WHAT ARE YOU DOING", "YOU CAN NOT <h1>POSSIBLY</h1> LOVE CHOCOLATE THIS MUCH", "<img src='../Image/Damn.webp'>"];
+let userChocolateAppreceation = 15;
 let tmp;
 
 const OUTPUT = document.getElementById("spaceForJavaScriptOutput");
 const NAME_FIELD = document.getElementById("nameField");
 const AGE_FIELD = document.getElementById("ageField");
 const MONEY_FIELD = document.getElementById("moneyField");
-
+const CHOCOLATE_RATING_FIELD = document.getElementById("chocolateAppreceationField");
 
 console.log("variables delcared successfully");
 
@@ -31,6 +32,7 @@ function begin() {
     userName = NAME_FIELD.value;
     userAge = Number(AGE_FIELD.value);
     userMoney = Number(MONEY_FIELD.value);
+    userChocolateAppreceation = Number(CHOCOLATE_RATING_FIELD.value);
     run();
 }
 
@@ -40,10 +42,18 @@ function run() {
     welcome();
     OUTPUT.innerHTML += "<p>You have $" + userMoney + "</p>";
     displayProduct("Chocolate bar", 4, userMoney);
+    OUTPUT.innerHTML += "<p>Your chocolate appreceation:</p>";
+    if (((userChocolateAppreceation + 1) > 14) || ((userChocolateAppreceation + 1) < -1))
+    {
+        OUTPUT.innerHTML += messages[15];
+    }
+    else{
+        OUTPUT.innerHTML += messages[userChocolateAppreceation + 1];
+    }
+    OUTPUT.innerHTML += "<br>";
+    OUTPUT.innerHTML += "<br>";
     displayProduct("chip", 3, userMoney);
     displayProduct("drink", 2.50, userMoney);
-    OUTPUT.innerHTML += "<br>";
-    OUTPUT.innerHTML += "<br>";
 
     //Adding it to the doc
     OUTPUT.innerHTML += "<p>Hello " + userName + "</p>";
