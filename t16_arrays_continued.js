@@ -46,13 +46,15 @@ function beginShopping() {
     console.log("recieved command");
     console.log("Input variables:");
     console.log(SHOPPING_ITEM.value);
+    console.log("");
+    console.log(SHOPPING_LIST);
     console.log(Number(ITEM_QUANTITY.value));
     items.push(SHOPPING_ITEM.value);
     itemQuantity.push(Number(ITEM_QUANTITY.value));
     SHOPPING_LIST.innerHTML = "<h2>MY SHOPPING LIST:</h2>";
     for (let i = items.length; i > 0; i--)
     {
-        SHOPPING_LIST.innerHTML += "<p>" + items[i-1] + " x" + itemQuantity[i-1] + "</p> <button onclick=purchase("+ (i-1) +")>Got one</button>";
+        SHOPPING_LIST.innerHTML += "<p>" + items[i-1] + " x" + itemQuantity[i-1] + "</p> <button onclick = purchase("+(i-1)+")>Got one</button>";
         console.log("loop successfully run, i=" + i + " here's the other stuff: " + items[i-1] + " x" + itemQuantity[i-1]);
     }
 }
@@ -151,6 +153,33 @@ function calculateChange (_money, _price)
     let leftOverChange = _money - _price;
     return leftOverChange;
     console.log("function called successfully using paramiters "+_money+", "+_price);
+}
+
+function purchase(_number)
+{
+    console.log("function called with paramiter "+_number);
+    let tmpItem = items[_number];
+    console.log("function called with paramiter "+tmpItem);
+    let tmpNumber = itemQuantity[_number];
+    console.log("function called with paramiter "+tmpNumber);
+    console.log();
+    for(let i=0; i<items.length; i++){
+        console.log("item "+ i +": "+items[i]+" with quantity: "+ itemQuantity[i]);
+    }
+    console.log();
+    itemQuantity[_number] = tmpNumber - 1;
+    console.log();
+    for(let i=0; i<items.length; i++){
+        console.log("item "+ i +": "+items[i]+" with quantity: "+ itemQuantity[i]);
+    }
+    console.log();
+    if ((tmpNumber - 1) <= 0)
+    {
+        itemQuantity.splice(_number, 1);
+        items.splice(_number, 1);
+    }
+    beginShopping();
+    console.log("function completed");
 }
 
 /*------------------------------------------------------------END OF PROGRAM------------------------------------------------------------*/
